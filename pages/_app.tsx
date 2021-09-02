@@ -8,13 +8,13 @@ import { theme } from 'theme'
 import { MoralisProvider } from "react-moralis";
 
 const App = ({ Component, pageProps }) => {
-  if (!process.env.MORALIS_APPLICATION_ID || !process.env.MORALIS_SERVER_ID) {
+  if (!process.env.MORALIS_APPLICATION_ID || !process.env.MORALIS_SERVER_URL) {
     return (
       <ThemeProvider theme={theme}>
         <Reset />
         <GlobalStyle />
         <Modal>
-          <h3>Moralis App_ID and Server_ID has not been set:</h3>
+          <h3>Moralis App_ID and Server_URL has not been set:</h3>
           <p>
             Follow the steps on the <a href="https://docs.moralis.io/getting-started/quick-start" target="_blank">Moralis documentation</a> to create a new Moralis project.
             Then find your application's app id and server id and paste them in a root <b>.env</b> file for both <b>.env.development</b> and <b>.env.production</b> like so:
@@ -22,7 +22,7 @@ const App = ({ Component, pageProps }) => {
           <pre>
             <code>
               MORALIS_APPLICATION_ID='[APP_ID]'<br/>
-              MORALIS_SERVER_ID='[SERVER_ID]'
+              MORALIS_SERVER_URL='[SERVER_URL]'
             </code>
           </pre>
         </Modal>
@@ -30,7 +30,7 @@ const App = ({ Component, pageProps }) => {
     )
   }
   return (
-    <MoralisProvider appId={process.env.MORALIS_APPLICATION_ID || ""} serverUrl={process.env.MORALIS_SERVER_ID || ""}>
+    <MoralisProvider appId={process.env.MORALIS_APPLICATION_ID || ""} serverUrl={process.env.MORALIS_SERVER_URL || ""}>
       <AavegotchiProvider>
         <ThemeProvider theme={theme}>
           <Reset />

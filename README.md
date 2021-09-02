@@ -30,6 +30,6 @@ Then create a `.env.development` and `.env.production`. Inside both set the the 
 
 ```
 MORALIS_APPLICATION_ID='[APP_ID]'
-MORALIS_SERVER_ID='[SERVER_ID]'
+MORALIS_SERVER_URL='[SERVER_URL]'
 ```
 
